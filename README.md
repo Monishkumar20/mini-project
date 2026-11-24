@@ -1,106 +1,193 @@
-# 🚀 Mini Project
+# ShadowNet: An AI-Assisted Offline Emergency Communication Network Using BLE
 
-## 📌 About the Project
-This repository contains my mini project developed as part of my learning journey in Computer Science. The project aims to solve a real-world problem through a simple and effective solution.
+## 1. Project Purpose
 
-## 🎯 Objectives
-- To apply theoretical knowledge in practical development.
-- To improve programming and problem-solving skills.
-- To gain hands-on experience with software development.
+ShadowNet is an Android-based offline emergency communication application designed to help people communicate during natural disasters, network failures, and emergencies in remote areas.
 
-## 🛠️ Technologies Used
-- HTML
-- CSS
-- JavaScript
-- [Add other technologies]
+The application uses Bluetooth Low Energy (BLE) to exchange messages between nearby smartphones without requiring mobile data or an internet connection.
 
-## ✨ Features
-- User-friendly interface
-- Simple and responsive design
-- Easy to use
-- Efficient functionality
+Its main purpose is to provide an additional communication option when normal network services are unavailable.
 
-## 📂 Project Structure
-```text
-Mini-Project/
-│
-├── index.html
-├── style.css
-├── script.js
-├── images/
-└── README.md
-```
+### Main Features
 
-## 🏗️ Project Architecture
+- **Offline Messaging:** Send and receive messages without internet access.
+- **Emergency SOS:** Send emergency alerts with an optional location.
+- **Multi-Hop Message Forwarding:** Forward messages through intermediate smartphones.
+- **Delivery Acknowledgement:** Track message delivery and confirmation.
+- **Emergency Priority Classification:** Classify messages into medical, fire, flood, and general help categories.
+- **Local Message Storage:** Save messages on the device for future access and forwarding.
 
-The project follows a simple and structured architecture to ensure better organization, maintainability, and easy development.
+## 2. Architecture
 
-### Architecture Diagram
+ShadowNet follows a decentralized communication approach in which participating smartphones exchange messages using Bluetooth Low Energy.
+
+### System Architecture
 
 ```text
-        User
-          |
-          v
-    User Interface
-          |
-          v
-    Application Logic
-          |
-          v
-      Data Layer
-          |
-          v
-      Output
+       User
+        |
+        v
+   ShadowNet App
+        |
+        v
+  Emergency Classification
+        |
+        v
+   Local Database
+     (Room/SQLite)
+        |
+        v
+ Bluetooth Low Energy
+        |
+        v
+  Nearby Smartphone
+        |
+        v
+  Message Validation
+        |
+        v
+  Store and Forward
+        |
+        v
+  Destination Device
 ```
 
-### Architecture Components
-1. **User:** Interacts with the application.
-2. **User Interface:** Displays the application interface.
-3. **Application Logic:** Processes user requests and performs operations.
-4. **Data Layer:** Stores and manages the required data.
-5. **Output:** Displays the final result to the user.
+### Working Process
 
-## 💭 Project Reflection
+1. The user creates a normal message or emergency SOS alert.
+2. The application assigns a message ID and stores it locally.
+3. BLE discovers nearby ShadowNet devices.
+4. The message is transferred to a nearby device.
+5. The receiving device checks for duplicate messages and saves the new message.
+6. If required, the receiving device forwards the message to another nearby device.
+7. Delivery acknowledgement is used to update the message status.
 
-Working on this mini project was a valuable learning experience. It helped me understand how theoretical concepts can be implemented in real-world applications.
+### Technologies Used
 
-### Key Learnings
-- Improved programming and technical skills.
-- Gained practical development experience.
-- Learned to identify and solve problems.
-- Understood project structure and code organization.
-- Improved debugging and logical thinking.
+| Technology | Purpose |
+|---|---|
+| Kotlin | Android application development |
+| Android Studio | Development environment |
+| Bluetooth Low Energy | Offline device communication |
+| Room / SQLite | Local message storage |
+| Android Location API | Emergency location sharing |
+| TensorFlow Lite / LiteRT | Optional AI-based classification |
 
-### Challenges Faced
-- Understanding project requirements.
-- Identifying and fixing errors.
-- Implementing the required features.
-- Managing project development efficiently.
+## 3. Setup
 
-### Future Improvements
-- Add more advanced features.
-- Improve user interface and user experience.
-- Enhance performance and security.
-- Make the application more scalable.
+### Requirements
 
-### Conclusion
-This mini project helped me improve my technical knowledge, creativity, and problem-solving abilities. It also gave me confidence to work on more advanced projects in the future.
-## ⚙️ Installation & Setup
-1. Clone this repository:
-   `git clone YOUR_REPOSITORY_URL`
-2. Open the project folder.
-3. Run the project using your browser or appropriate development environment.
+- Android Studio
+- Kotlin development support
+- Android smartphone with BLE support
+- Android SDK
+- Two or more Android smartphones for testing
+- Bluetooth permission enabled
 
-## 📸 Screenshots
-Add your project screenshots here.
+### Installation Steps
 
-## 👨‍💻 Developer
-**Monish Kumar B**
+1. Install Android Studio on your computer.
+2. Clone or download the ShadowNet project repository.
+3. Open the project in Android Studio.
+4. Allow Gradle to sync and download required dependencies.
+5. Connect an Android smartphone using USB debugging.
+6. Build and run the application.
+7. Install the application on another Android smartphone for communication testing.
+8. Grant the required Bluetooth and location permissions.
 
-Computer Science Student
+### Run the Application
 
-## 📜 License
-This project is created for educational purposes.
+```bash
+git clone <your-github-repository-url>
+```
+
+Open the downloaded project in Android Studio and click **Run**.
+
+## 4. Usage
+
+1. Open the ShadowNet application on two or more Android smartphones.
+2. Enable Bluetooth on all participating devices.
+3. Grant the required application permissions.
+4. Start nearby device discovery.
+5. Select a nearby ShadowNet device or use the emergency SOS option.
+6. Enter a message or select an emergency category.
+7. Send the message using BLE.
+8. The receiving device stores and displays the message.
+9. Intermediate devices can forward messages when multi-hop forwarding is implemented.
+10. Check the delivery status and acknowledgement.
+
+### Example Scenario
+
+Phone A sends an emergency SOS message.
+
+Phone B receives and forwards the message.
+
+Phone C receives the forwarded emergency alert.
+
+```text
+Phone A  --->  Phone B  --->  Phone C
+  SOS          Relay        Receive
+```
+
+This demonstrates the proposed offline message-forwarding workflow.
+
+## 5. Results
+
+The expected output of ShadowNet is an Android application that can demonstrate:
+
+- Offline message exchange between nearby smartphones.
+- Emergency SOS message transmission.
+- Local storage of messages and alerts.
+- Message forwarding through intermediate devices.
+- Emergency priority classification.
+- Delivery acknowledgement and status tracking.
+
+### Performance Evaluation
+
+The application will be evaluated using:
+
+| Evaluation Parameter | Purpose |
+|---|---|
+| Message Delivery Success Rate | Measure successful message delivery |
+| Message Delivery Time | Measure the time taken to deliver messages |
+| Relay Hops | Count the intermediate devices used |
+| Battery Consumption | Observe battery usage during communication |
+| Message Reliability | Check duplicate handling and delivery confirmation |
+
+*Note: These are evaluation objectives. Actual results and measurements should be added after implementing and testing the application.*
+
+## 6. Reflection
+
+Through the development of ShadowNet, we aim to learn Android application development, Bluetooth Low Energy communication, local database management, and offline networking concepts.
+
+Working as a two-member team will help us improve our teamwork, problem-solving, and software integration skills.
+
+### Challenges We Aim to Solve
+
+- Establishing BLE communication between multiple smartphones.
+- Handling Bluetooth permissions and device compatibility.
+- Forwarding messages without creating duplicates.
+- Storing emergency messages when devices are disconnected.
+- Managing message delivery acknowledgements.
+- Prioritizing emergency messages.
+
+### What We Learned
+
+This project will help us understand how mobile devices can communicate without internet connectivity and how decentralized message forwarding can support emergency communication.
+
+It will also provide practical experience in developing Android applications and testing communication protocols.
 
 ---
-⭐ If you find this project useful, feel free to star this repository!
+
+## Future Enhancements
+
+- Improved AI-based emergency classification.
+- Battery-aware message forwarding.
+- Offline maps and safe-zone information.
+- Emergency volunteer and resource coordination.
+- Improved message encryption and privacy.
+
+## Conclusion
+
+ShadowNet proposes an offline emergency communication solution using Bluetooth Low Energy. By combining offline messaging, SOS alerts, local storage, message forwarding, and emergency priority classification, it aims to provide an alternative communication method during network outages and emergency situations.
+:::
