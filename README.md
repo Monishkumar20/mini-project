@@ -21,35 +21,11 @@ Its main purpose is to provide an additional communication option when normal ne
 
 ShadowNet follows a decentralized communication approach in which participating smartphones exchange messages using Bluetooth Low Energy.
 
-### System Architecture
+<img width="1346" height="1054" alt="image" src="https://github.com/user-attachments/assets/2407e7f1-c319-40ee-8b6c-c4f4771b4d65" />
 
-```text
-       User
-        |
-        v
-   ShadowNet App
-        |
-        v
-  Emergency Classification
-        |
-        v
-   Local Database
-     (Room/SQLite)
-        |
-        v
- Bluetooth Low Energy
-        |
-        v
-  Nearby Smartphone
-        |
-        v
-  Message Validation
-        |
-        v
-  Store and Forward
-        |
-        v
-  Destination Device
+<img width="1206" height="303" alt="image" src="https://github.com/user-attachments/assets/77755d5c-7fee-4893-9af1-4bbbed0fbd6d" />
+
+
 ```
 
 ### Working Process
