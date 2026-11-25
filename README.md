@@ -26,7 +26,6 @@ ShadowNet follows a decentralized communication approach in which participating 
 <img width="1206" height="303" alt="image" src="https://github.com/user-attachments/assets/77755d5c-7fee-4893-9af1-4bbbed0fbd6d" />
 
 
-```
 
 ### Working Process
 
@@ -74,7 +73,7 @@ ShadowNet follows a decentralized communication approach in which participating 
 ### Run the Application
 
 ```bash
-git clone <your-github-repository-url>
+git clone <>
 ```
 
 Open the downloaded project in Android Studio and click **Run**.
