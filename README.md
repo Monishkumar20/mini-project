@@ -21,9 +21,8 @@ Its main purpose is to provide an additional communication option when normal ne
 
 ShadowNet follows a decentralized communication approach in which participating smartphones exchange messages using Bluetooth Low Energy.
 
-<img width="1346" height="1054" alt="image" src="https://github.com/user-attachments/assets/2407e7f1-c319-40ee-8b6c-c4f4771b4d65" />
+<img width="1118" height="1600" alt="WhatsApp Image 2026-11-25 at 12 12 59 PM" src="https://github.com/user-attachments/assets/c6c8018a-8213-4af5-aa0d-4d25c15a814b" />
 
-<img width="1206" height="303" alt="image" src="https://github.com/user-attachments/assets/77755d5c-7fee-4893-9af1-4bbbed0fbd6d" />
 
 
 
