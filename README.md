@@ -72,7 +72,7 @@ ShadowNet follows a decentralized communication approach in which participating 
 ### Run the Application
 
 ```bash
-git clone <>
+git clone <https://github.com/Monishkumar20/mini-project>
 ```
 
 Open the downloaded project in Android Studio and click **Run**.
